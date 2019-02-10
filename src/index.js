@@ -7,11 +7,8 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-mongoose.connect(
-    'mongodb+srv://admand:Marvin@03141718@cluster0-aryaf.mongodb.net/test?retryWrites=true', 
-    {
-        useNewUrlParser: true
-    }
+mongoose.connect( // mongodb local
+    'mongodb://localhost:27017/gotwitter', { useNewUrlParser: true }
 );
 
 app.use((req, res, next) =>{
