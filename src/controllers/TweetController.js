@@ -13,6 +13,8 @@ module.exports = {
         // criação de novos registros
         const tweet = await Tweet.create(req.body);
 
+        req.io.emit('tweet', tweet); // nome do evento e objeto
+
         return res.json(tweet);
     }
 };

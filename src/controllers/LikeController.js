@@ -8,6 +8,8 @@ module.exports = {
 
         await tweet.save();
 
+        req.io.emit('like', tweet); // nome do evento e objeto
+        
         return res.json(tweet);
     },
 }
