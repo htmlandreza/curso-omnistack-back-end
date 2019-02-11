@@ -7,8 +7,12 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-mongoose.connect( // mongodb local
-    'mongodb://localhost:27017/gotwitter', { useNewUrlParser: true }
+mongoose.connect( 
+    // mongodb local
+    //'mongodb://localhost:27017/gotwitter', { useNewUrlParser: true }
+
+    // mongo atlas
+    'mongodb+srv://admand:marvin2019@gotwitter-0idtk.mongodb.net/test?retryWrites=true', { useNewUrlParser: true }
 );
 
 app.use((req, res, next) =>{
